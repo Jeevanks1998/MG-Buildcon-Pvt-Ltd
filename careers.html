@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | MG Buildcon Pvt Ltd</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #003d82;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: #ff6b00;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e05d00;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            padding: 10px 0;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            color: #0056b3;
+            font-size: 2rem;
+            animation: pulse 2s infinite;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo h1 {
+            font-size: 1.6rem;
+            color: #0056b3;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+        }
+        
+        .logo h1 span {
+            color: #ff6b00;
+        }
+        
+        .logo p {
+            font-size: 0.7rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+            position: relative;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: #0056b3;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #0056b3;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links .active {
+            color: #0056b3;
+        }
+        
+        .nav-links .active::after {
+            width: 100%;
+        }
+        
+        /* Dropdown Styles */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            width: 200px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            list-style: none;
+            padding: 10px 0;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: #555;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-menu a:hover {
+            background-color: #f5f8ff;
+            color: #0056b3;
+            padding-left: 25px;
+        }
+        
+        /* Careers Hero Section */
+        .careers-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .careers-hero-content {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .careers-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 800;
+            animation: fadeInDown 1s ease-out forwards;
+        }
+        
+        .careers-hero h1 span {
+            color: #ff6b00;
+        }
+        
+        .careers-hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 0.6s;
+            opacity: 0;
+        }
+        
+        /* Why Join Us Section */
+        .why-join-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #0056b3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover .benefit-icon {
+            background-color: #ff6b00;
+            transform: rotate(15deg) scale(1.1);
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        /* Open Positions Section */
+        .positions-section {
+            padding: 80px 0;
+            background-color: #f5f7fa;
+        }
+        
+        .positions-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .position-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .position-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .position-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .position-title h3 {
+            font-size: 1.5rem;
+            color: #0056b3;
+        }
+        
+        .position-title p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .position-meta {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #555;
+            font-size: 0.9rem;
+        }
+        
+        .meta-item i {
+            color: #ff6b00;
+        }
+        
+        .position-details {
+            margin-top: 20px;
+        }
+        
+        .position-details h4 {
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+        
+        .position-details ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .position-details li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .apply-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #ff6b00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .apply-btn:hover {
+            background-color: #e05d00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+        }
+        
+        /* Culture Section */
+        .culture-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .culture-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .culture-image img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .culture-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .culture-text h2 {
+            font-size: 2.5rem;
+            color: #0056b3;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .culture-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: #ff6b00;
+        }
+        
+        .culture-text p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: #ff6b00;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #0056b3;
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            color: #bbb;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #ff6b00;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Mobile Menu Styles */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 30px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background-color: #fff;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 30px;
+                transition: all 0.5s ease;
+                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                font-size: 1.1rem;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                display: none;
+                padding-left: 20px;
+            }
+            
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .careers-hero {
+                height: auto;
+                padding: 100px 0;
+            }
+            
+            .careers-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .position-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .careers-hero {
+                padding-top: 70px;
+            }
+            
+            .careers-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .careers-hero p {
+                font-size: 1.2rem;
+            }
+            
+            .culture-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .culture-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .careers-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-building logo-icon"></i>
+                    <div class="logo-text">
+                        <h1><span>MG</span> Buildcon Pvt Ltd</h1>
+                        <p>Building Dreams Since 2025</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="project.html">Projects <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="project.html">Residential</a></li>
+                            <li><a href="project.html">Commercial</a></li>
+                            <li><a href="project.html">Industrial</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="construction.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="construction.html">Construction Services</a></li>
+                            <li><a href="construction.html">Architectural Design</a></li>
+                            <li><a href="construction.html">Interior Design</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="careers.html" class="">Careers</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#" class="btn calculator-btn">Cost Calculator</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Careers Hero Section -->
+    <section class="careers-hero">
+        <div class="container">
+            <div class="careers-hero-content">
+                <h1>Join Us <span>Today!</span></h1>
+                <p>Design Your Career, Design the Future<br>Where Every Role Contributes to Building a Promising Tomorrow.</p>
+                <div class="hero-buttons">
+                    <a href="#positions" class="btn">View Open Positions</a>
+                    <a href="#why-join" class="btn btn-secondary">Why Join Us?</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Join Us Section -->
+    <section class="why-join-section" id="why-join">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Build Your Career With Us?</h2>
+                <p>At MG Buildcon, we don't just build structures - we build careers. Here's what makes us different:</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Growth Opportunities</h3>
+                    <p>We invest in your professional development with training programs, mentorship, and clear career progression paths.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaborative Culture</h3>
+                    <p>Work in teams where every voice matters, collaboration is encouraged, and innovation thrives.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Impactful Work</h3>
+                    <p>Contribute to landmark projects that shape skylines and communities for generations to come.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Work-Life Balance</h3>
+                    <p>We value your time outside work with flexible schedules and generous leave policies.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Comprehensive Benefits</h3>
+                    <p>Health insurance, retirement plans, and wellness programs to support your whole life.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Recognition</h3>
+                    <p>Your hard work doesn't go unnoticed with our employee recognition and reward programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Positions Section -->
+    <section class="positions-section" id="positions">
+        <div class="container">
+            <div class="section-title">
+                <h2>Current Openings</h2>
+                <p>Explore opportunities to join our growing team</p>
+            </div>
+            
+            <div class="positions-container">
+                <div class="position-card">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <h3>Project Manager</h3>
+                            <p>Construction Division</p>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Bangalore, KA</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-calendar-alt"></i> Posted 2 weeks ago</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <h4>Job Description:</h4>
+                        <ul>
+                            <li>Lead construction projects from conception to completion</li>
+                            <li>Manage budgets, timelines, and quality standards</li>
+                            <li>Coordinate with architects, engineers, and contractors</li>
+                            <li>Ensure compliance with safety regulations</li>
+                            <li>Report on project progress to stakeholders</li>
+                        </ul>
+                        <h4>Requirements:</h4>
+                        <ul>
+                            <li>Bachelor's degree in Civil Engineering or related field</li>
+                            <li>5+ years experience in construction project management</li>
+                            <li>PMP certification preferred</li>
+                            <li>Strong leadership and communication skills</li>
+                        </ul>
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <div class="position-card">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <h3>Architectural Designer</h3>
+                            <p>Design Studio</p>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Mumbai, MH</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-calendar-alt"></i> Posted 1 week ago</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <h4>Job Description:</h4>
+                        <ul>
+                            <li>Create architectural designs and detailed drawings</li>
+                            <li>Collaborate with clients to understand project requirements</li>
+                            <li>Use CAD software to prepare designs</li>
+                            <li>Participate in design reviews and presentations</li>
+                            <li>Work with engineering teams to ensure design feasibility</li>
+                        </ul>
+                        <h4>Requirements:</h4>
+                        <ul>
+                            <li>Bachelor's or Master's degree in Architecture</li>
+                            <li>3+ years experience in architectural design</li>
+                            <li>Proficiency in AutoCAD, Revit, and SketchUp</li>
+                            <li>Strong portfolio of design work</li>
+                        </ul>
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <div class="position-card">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <h3>Construction Site Supervisor</h3>
+                            <p>Field Operations</p>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Hyderabad, TS</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-calendar-alt"></i> Posted 3 days ago</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <h4>Job Description:</h4>
+                        <ul>
+                            <li>Oversee daily construction site operations</li>
+                            <li>Supervise and coordinate subcontractors and workers</li>
+                            <li>Ensure work complies with plans and specifications</li>
+                            <li>Maintain safety standards on site</li>
+                            <li>Report on progress and issues to project manager</li>
+                        </ul>
+                        <h4>Requirements:</h4>
+                        <ul>
+                            <li>Diploma or degree in Construction Management</li>
+                            <li>4+ years experience in construction supervision</li>
+                            <li>Knowledge of construction methods and materials</li>
+                            <li>Strong problem-solving skills</li>
+                        </ul>
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <div class="position-card">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <h3>Interior Designer</h3>
+                            <p>Design Studio</p>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Delhi, DL</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-calendar-alt"></i> Posted 5 days ago</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <h4>Job Description:</h4>
+                        <ul>
+                            <li>Create interior design concepts for residential and commercial projects</li>
+                            <li>Select materials, furnishings, and color schemes</li>
+                            <li>Prepare presentations and 3D renderings for clients</li>
+                            <li>Coordinate with architects and contractors</li>
+                            <li>Manage projects from concept to installation</li>
+                        </ul>
+                        <h4>Requirements:</h4>
+                        <ul>
+                            <li>Degree in Interior Design or related field</li>
+                            <li>2+ years professional experience</li>
+                            <li>Proficiency in design software (AutoCAD, 3ds Max, etc.)</li>
+                            <li>Strong creative and communication skills</li>
+                        </ul>
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="culture-section">
+        <div class="container">
+            <div class="culture-grid">
+                <div class="culture-text">
+                    <h2>Our Work Culture</h2>
+                    <p>At MG Buildcon, we've created an environment where talent thrives. Our culture is built on collaboration, innovation, and mutual respect.</p>
+                    <p>We believe that great buildings start with great teams. That's why we foster a workplace where diverse perspectives are valued, where employees are empowered to take initiative, and where work-life balance is more than just a buzzword.</p>
+                    <p>From team-building retreats to continuous learning opportunities, we invest in our people because we know they're the foundation of our success.</p>
+                    <a href="#" class="btn">Learn More About Our Culture</a>
+                </div>
+                <div class="culture-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="MG Buildcon Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Build Your Future With Us?</h2>
+                <p>Whether you're applying for a current opening or want to explore future opportunities, we'd love to hear from you.</p>
+                <div class="cta-buttons">
+                    <a href="#positions" class="btn">View Open Positions</a>
+                    <a href="#" class="btn btn-secondary">Submit Your Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Styles -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About MG Buildcon</h3>
+                    <p>Building dreams since 2025, MG Buildcon Pvt Ltd is committed to excellence in construction and design, creating spaces that inspire and endure.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="project.html">Projects</a></li>
+                        <li><a href="construction.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Construction Avenue, Bangalore, KA 560001</p>
+                    <p><i class="fas fa-phone"></i> +91 8660255575</p>
+                    <p><i class="fas fa-envelope"></i> info@mgbuildcon.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MG Buildcon Pvt Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdowns = document.querySelectorAll('.dropdown');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                document.querySelector('header').classList.add('scrolled');
+            } else {
+                document.querySelector('header').classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
