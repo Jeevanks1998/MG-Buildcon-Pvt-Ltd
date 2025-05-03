@@ -1726,173 +1726,136 @@
             }
         }
 
-        /* Simple Footer Styles */
-  .simple-footer {
-    background-color: #0056b3;
-    color: white;
-    padding: 30px 0 15px;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-  }
-  
-  .footer-section {
-    margin-bottom: 20px;
-  }
-  
-  .footer-section h3 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #FFD700;
-  }
-  
-  .footer-section p {
-    line-height: 1.6;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-  }
-  
-  .footer-section i {
-    margin-right: 8px;
-    color: #FFD700;
-    width: 16px;
-    text-align: center;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-section li {
-    margin-bottom: 8px;
-  }
-  
-  .footer-section a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .footer-section a:hover {
-    color: #FFD700;
-  }
-  
-  /* Newsletter Styles */
-  .newsletter-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .newsletter-form input {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    font-size: 0.9rem;
-  }
-  
-  .newsletter-form button {
-    background-color: #FFD700;
-    color: #0056b3;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  .newsletter-form button:hover {
-    background-color: #e6c200;
-  }
-  
-  /* Social Icons */
-  .social-icons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-bottom: 15px;
-  }
-  
-  .social-icons a {
-    color: white;
-    background: rgba(255, 255, 255, 0.1);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-  }
-  
-  .social-icons a:hover {
-    background: #FFD700;
-    color: #0056b3;
-    transform: translateY(-3px);
-  }
-  
-  /* Footer Bottom */
-  .footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 20px;
-  }
-  
-  .footer-bottom p {
-    margin: 0 0 10px;
-    font-size: 0.9rem;
-  }
-  
-  .legal-links {
-    font-size: 0.8rem;
-  }
-  
-  .legal-links a {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .legal-links a:hover {
-    color: white;
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    .footer-content {
-      grid-template-columns: 1fr;
-      gap: 25px;
-    }
-    
-    .footer-section {
-      text-align: center;
-    }
-    
-    .newsletter-form {
-      max-width: 300px;
-      margin: 0 auto;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .footer-content {
-      gap: 20px;
-    }
-    
-    .newsletter-form {
-      width: 100%;
-    }
-  }
+       /* Footer Styles */
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: #ff6b00;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #0056b3;
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            color: #bbb;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #ff6b00;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
         /* Mobile Menu */
         .hamburger {
@@ -2531,59 +2494,42 @@
     </div>
 </section>
 
-<!-- Simple Responsive Footer with Newsletter -->
-<footer class="simple-footer">
-    <div class="footer-content">
-      <!-- Contact Info -->
-      <div class="footer-section">
-        <h3>MG Buildcon</h3>
-        <p>
-          <i class="fas fa-map-marker-alt"></i> #123, MG Road, Bengaluru, Karnataka 560001<br>
-          <i class="fas fa-phone"></i> +91 9876543210<br>
-          <i class="fas fa-envelope"></i> info@mgbuildcon.com
-        </p>
-      </div>
-  
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-  
-      <!-- Newsletter -->
-      <div class="footer-section newsletter">
-        <h3>Newsletter</h3>
-        <p>Subscribe to our newsletter for updates</p>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Your email address" required>
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-    </div>
-  
-    <div class="footer-bottom">
-      <!-- Social Media -->
-      <div class="social-icons">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      </div>
-  
-      <p>&copy; 2025 MG Buildcon Pvt Ltd. All Rights Reserved. Designed By Jeevan K S</p>
-      <div class="legal-links">
-        <a href="#">Privacy Policy</a> | 
-        <a href="#">Terms of Service</a>
-      </div>
-    </div>
-  </footer>
-
+ <!-- Footer Styles -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About MG Buildcon</h3>
+                    <p>Building dreams since 2025, MG Buildcon Pvt Ltd is committed to excellence in construction and design, creating spaces that inspire and endure.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="project.html">Projects</a></li>
+                        <li><a href="construction.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Construction Avenue, Bangalore, KA 560001</p>
+                    <p><i class="fas fa-phone"></i> +91 9880166879 </p>
+                    <p><i class="fas fa-envelope"></i>mgbuildcon2025@gmail.com </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MG Buildcon Pvt Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
 
