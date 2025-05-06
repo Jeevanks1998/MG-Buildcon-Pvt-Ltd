@@ -703,6 +703,7 @@
             gap: 20px;
             flex-wrap: wrap;
         }
+        
         /* Popup Styles */
     .motivation-popup {
         position: fixed;
@@ -795,6 +796,7 @@
         transform: translateY(-2px);
         box-shadow: 0 4px 10px rgba(255, 107, 0, 0.3);
     }
+
         /* Footer Styles */
         footer {
             background-color: #222;
@@ -1383,7 +1385,7 @@
                             <span class="tag">Civil 3D</span>
                             <span class="tag">Design</span>
                         </div>
-                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                        <a href="mailto:careers@mgbuildcon.com?subject=Application for [Position Name]&body=Dear Hiring Manager,%0D%0A%0D%0AI am interested in applying for the [Position Name] position at MG Buildcon.%0D%0A%0D%0APlease find my resume attached.%0D%0A%0D%0ABest regards,%0D%0A[Your Name]" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -1991,7 +1993,7 @@
         </div>
     </section>
 
-    
+
     <!-- Culture Section -->
     <section class="culture-section">
         <div class="container">
@@ -2023,7 +2025,8 @@
             </div>
         </div>
     </section>
-<!-- Compact Motivational Popup -->
+
+    <!-- Compact Motivational Popup -->
 <div class="motivation-popup" id="motivationPopup">
     <div class="popup-content">
         <span class="close-popup">&times;</span>
@@ -2035,7 +2038,7 @@
         <button class="btn card-btn">Join Our Team</button>
     </div>
 </div>
-    
+
     <!-- Footer Styles -->
     <footer>
         <div class="container">
@@ -2125,6 +2128,36 @@
             if (e.target === popup) popup.classList.remove('active');
         });
     });
+
+    // Add this script before the closing </body> tag
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all apply buttons
+    const applyButtons = document.querySelectorAll('.apply-btn');
+    
+    // Add click handler to each button
+    applyButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get position title from the card
+            const positionCard = this.closest('.position-card');
+            const positionTitle = positionCard.querySelector('.position-title-text h3').textContent;
+            const department = positionCard.querySelector('.position-title-text p').textContent;
+            
+            // Create email subject and body
+            const subject = `Application for ${positionTitle} - ${department}`;
+            const body = `Dear Hiring Manager,\n\nI am interested in applying for the ${positionTitle} position at MG Buildcon.\n\nPlease find my resume attached.\n\nBest regards,\n[Your Name]`;
+            
+            // Encode for URL
+            const encodedSubject = encodeURIComponent(subject);
+            const encodedBody = encodeURIComponent(body);
+            
+            // Open default mail client
+            window.location.href = `mailto:careers@mgbuildcon.com?subject=${encodedSubject}&body=${encodedBody}`;
+        });
+    });
+});
+
     </script>
 </body>
 </html>
