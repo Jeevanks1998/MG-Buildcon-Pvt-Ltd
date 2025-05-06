@@ -331,104 +331,292 @@
             line-height: 1.6;
         }
         
-        /* Open Positions Section */
+        /* Updated Open Positions Section */
         .positions-section {
             padding: 80px 0;
             background-color: #f5f7fa;
         }
         
         .positions-container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 25px;
         }
         
         .position-card {
             background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            border-left: 5px solid #0056b3;
+            position: relative;
         }
         
         .position-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
         }
         
         .position-header {
+            background-color: white;
+            padding: 25px 30px 15px;
+            position: relative;
+        }
+        
+        .position-title {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
             gap: 15px;
         }
         
-        .position-title h3 {
+        .position-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             font-size: 1.5rem;
-            color: #0056b3;
+            flex-shrink: 0;
         }
         
-        .position-title p {
+        .position-title-text h3 {
+            font-size: 1.5rem;
+            color: #0056b3;
+            margin-bottom: 5px;
+        }
+        
+        .position-title-text p {
             color: #666;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
         
         .position-meta {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
+            margin-top: 15px;
+            padding-left: 75px;
         }
         
         .meta-item {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
             color: #555;
             font-size: 0.9rem;
         }
         
         .meta-item i {
             color: #ff6b00;
+            font-size: 0.8rem;
         }
         
         .position-details {
-            margin-top: 20px;
+            padding: 0 30px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
-        .position-details h4 {
-            color: #0056b3;
-            margin-bottom: 10px;
-        }
-        
-        .position-details ul {
-            margin-left: 20px;
+        .detail-section {
             margin-bottom: 20px;
         }
         
-        .position-details li {
+        .detail-section h4 {
+            color: #0056b3;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        
+        .detail-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: #ff6b00;
+        }
+        
+        .detail-section ul {
+            margin-left: 5px;
+            margin-bottom: 0;
+        }
+        
+        .detail-section li {
             margin-bottom: 8px;
             color: #555;
+            position: relative;
+            padding-left: 20px;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+        
+        .detail-section li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #ff6b00;
+            font-weight: bold;
+        }
+        
+        .position-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            margin-top: auto;
+            background-color: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+        
+        .position-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            background-color: #e6f0ff;
+            color: #0056b3;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
         }
         
         .apply-btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             padding: 10px 25px;
-            background-color: #ff6b00;
+            background: linear-gradient(135deg, #ff6b00 0%, #e05d00 100%);
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 4px 10px rgba(255, 107, 0, 0.2);
         }
         
         .apply-btn:hover {
-            background-color: #e05d00;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+            box-shadow: 0 7px 15px rgba(255, 107, 0, 0.3);
+        }
+        
+        .apply-btn i {
+            transition: transform 0.3s ease;
+        }
+        
+        .apply-btn:hover i {
+            transform: translateX(3px);
+        }
+        
+        /* Featured Position Style */
+        .featured-position {
+            border-left: 5px solid #ff6b00;
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #ff6b00 0%, #e05d00 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(255, 107, 0, 0.3);
+        }
+        
+        /* Department Filter */
+        .department-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            background-color: white;
+            color: #0056b3;
+            border: 1px solid #0056b3;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #0056b3;
+            color: white;
+        }
+        
+        /* No Results Message */
+        .no-results {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: 50px;
+            color: #666;
+        }
+        
+        /* (Rest of the CSS remains the same) */
+        
+        @media (max-width: 992px) {
+            .positions-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .position-header {
+                padding: 20px 20px 15px;
+            }
+            
+            .position-details {
+                padding: 0 20px 15px;
+            }
+            
+            .position-footer {
+                padding: 15px 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .position-meta {
+                padding-left: 0;
+                margin-top: 10px;
+            }
+            
+            .position-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .position-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
         }
         
         /* Culture Section */
@@ -891,146 +1079,828 @@
         </div>
     </section>
 
-    <!-- Open Positions Section -->
-    <section class="positions-section" id="positions">
+     <!-- Open Positions Section -->
+     <section class="positions-section" id="positions">
         <div class="container">
             <div class="section-title">
                 <h2>Current Openings</h2>
                 <p>Explore opportunities to join our growing team</p>
             </div>
             
+            <div class="department-filter">
+                <button class="filter-btn active" data-department="all">All Departments</button>
+                <button class="filter-btn" data-department="engineering">Engineering</button>
+                <button class="filter-btn" data-department="design">Design</button>
+                <button class="filter-btn" data-department="construction">Construction</button>
+                <button class="filter-btn" data-department="management">Management</button>
+            </div>
+            
             <div class="positions-container">
-                <div class="position-card">
+                <!-- Civil Engineer -->
+                <div class="position-card" data-department="engineering">
                     <div class="position-header">
                         <div class="position-title">
-                            <h3>Project Manager</h3>
-                            <p>Construction Division</p>
+                            <div class="position-icon">
+                                <i class="fas fa-road"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Civil Engineer</h3>
+                                <p>Engineering Department</p>
+                            </div>
                         </div>
                         <div class="position-meta">
-                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Bangalore, KA</span>
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Multiple Locations</span>
                             <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
-                            <span class="meta-item"><i class="fas fa-calendar-alt"></i> Posted 2 weeks ago</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
                         </div>
                     </div>
                     <div class="position-details">
-                        <h4>Job Description:</h4>
-                        <ul>
-                            <li>Lead construction projects from conception to completion</li>
-                            <li>Manage budgets, timelines, and quality standards</li>
-                            <li>Coordinate with architects, engineers, and contractors</li>
-                            <li>Ensure compliance with safety regulations</li>
-                            <li>Report on project progress to stakeholders</li>
-                        </ul>
-                        <h4>Requirements:</h4>
-                        <ul>
-                            <li>Bachelor's degree in Civil Engineering or related field</li>
-                            <li>5+ years experience in construction project management</li>
-                            <li>PMP certification preferred</li>
-                            <li>Strong leadership and communication skills</li>
-                        </ul>
-                        <a href="#" class="apply-btn">Apply Now</a>
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Plan, design, and oversee construction and maintenance of infrastructure projects</li>
+                                <li>Conduct site investigations and analyze data for project feasibility</li>
+                                <li>Prepare technical reports and cost estimates</li>
+                                <li>Ensure compliance with safety regulations and quality standards</li>
+                                <li>Coordinate with project stakeholders and construction teams</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Civil Engineering or related field</li>
+                                <li>2+ years experience in civil engineering projects</li>
+                                <li>Proficiency in AutoCAD and Civil 3D</li>
+                                <li>Knowledge of construction methods and materials</li>
+                                <li>Strong problem-solving and communication skills</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Infrastructure</span>
+                            <span class="tag">Design</span>
+                            <span class="tag">Construction</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                
-                <div class="position-card">
+
+                <!-- Design Engineer -->
+                <div class="position-card" data-department="design">
                     <div class="position-header">
                         <div class="position-title">
-                            <h3>Architectural Designer</h3>
-                            <p>Design Studio</p>
+                            <div class="position-icon">
+                                <i class="fas fa-drafting-compass"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Design Engineer</h3>
+                                <p>Design Studio</p>
+                            </div>
                         </div>
                         <div class="position-meta">
                             <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Mumbai, MH</span>
                             <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
-                            <span class="meta-item"><i class="fas fa-calendar-alt"></i> Posted 1 week ago</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
                         </div>
                     </div>
                     <div class="position-details">
-                        <h4>Job Description:</h4>
-                        <ul>
-                            <li>Create architectural designs and detailed drawings</li>
-                            <li>Collaborate with clients to understand project requirements</li>
-                            <li>Use CAD software to prepare designs</li>
-                            <li>Participate in design reviews and presentations</li>
-                            <li>Work with engineering teams to ensure design feasibility</li>
-                        </ul>
-                        <h4>Requirements:</h4>
-                        <ul>
-                            <li>Bachelor's or Master's degree in Architecture</li>
-                            <li>3+ years experience in architectural design</li>
-                            <li>Proficiency in AutoCAD, Revit, and SketchUp</li>
-                            <li>Strong portfolio of design work</li>
-                        </ul>
-                        <a href="#" class="apply-btn">Apply Now</a>
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Create detailed plans, blueprints, and technical specifications</li>
+                                <li>Develop construction documentation using CAD software</li>
+                                <li>Collaborate with architects and engineers on design solutions</li>
+                                <li>Review and modify designs to meet requirements</li>
+                                <li>Ensure designs comply with regulations and standards</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Civil Engineering or Architecture</li>
+                                <li>3+ years experience in design engineering</li>
+                                <li>Expertise in AutoCAD, Revit, and BIM software</li>
+                                <li>Strong technical drawing and documentation skills</li>
+                                <li>Knowledge of construction materials and methods</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">CAD</span>
+                            <span class="tag">Technical Drawing</span>
+                            <span class="tag">BIM</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                
-                <div class="position-card">
+
+                <!-- Structural Engineer -->
+                <div class="position-card" data-department="engineering">
                     <div class="position-header">
                         <div class="position-title">
-                            <h3>Construction Site Supervisor</h3>
-                            <p>Field Operations</p>
+                            <div class="position-icon">
+                                <i class="fas fa-ruler-combined"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Structural Engineer</h3>
+                                <p>Engineering Department</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Chennai, TN</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Design and analyze structural components (beams, columns, foundations)</li>
+                                <li>Ensure structural stability and strength of buildings and infrastructure</li>
+                                <li>Prepare structural calculations and specifications</li>
+                                <li>Review shop drawings and respond to RFIs</li>
+                                <li>Conduct site visits to monitor construction quality</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Master's degree in Structural Engineering</li>
+                                <li>4+ years experience in structural design</li>
+                                <li>Proficiency in ETABS, STAAD.Pro, or similar software</li>
+                                <li>Knowledge of Indian and international building codes</li>
+                                <li>Strong analytical and problem-solving skills</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Structural Analysis</span>
+                            <span class="tag">ETABS</span>
+                            <span class="tag">Building Codes</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Civil Design Engineer -->
+                <div class="position-card" data-department="design">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Civil Design Engineer</h3>
+                                <p>Design Department</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Pune, MH</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Develop detailed civil engineering designs for infrastructure projects</li>
+                                <li>Create plans for highways, water systems, and tunnels</li>
+                                <li>Prepare technical specifications and construction documents</li>
+                                <li>Coordinate with surveyors and construction teams</li>
+                                <li>Ensure designs meet regulatory requirements</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Civil Engineering</li>
+                                <li>3+ years experience in civil design</li>
+                                <li>Proficiency in AutoCAD Civil 3D and MicroStation</li>
+                                <li>Knowledge of civil engineering principles and practices</li>
+                                <li>Strong attention to detail and technical skills</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Infrastructure</span>
+                            <span class="tag">Civil 3D</span>
+                            <span class="tag">Design</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- CAD Technician -->
+                <div class="position-card" data-department="design">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-pencil-ruler"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>CAD Technician</h3>
+                                <p>Design Support</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Bengaluru, KA</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Create technical drawings and plans using CAD software</li>
+                                <li>Convert engineer sketches into detailed drawings</li>
+                                <li>Maintain drawing files and documentation</li>
+                                <li>Assist with design modifications and revisions</li>
+                                <li>Ensure drawings comply with company standards</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Diploma in Civil Engineering or Drafting</li>
+                                <li>2+ years experience in CAD drafting</li>
+                                <li>Expertise in AutoCAD and Revit</li>
+                                <li>Knowledge of construction documentation</li>
+                                <li>Strong attention to detail</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">CAD</span>
+                            <span class="tag">Drafting</span>
+                            <span class="tag">Technical Drawing</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Site Engineer -->
+                <div class="position-card" data-department="construction">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-hard-hat"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Site Engineer</h3>
+                                <p>Field Operations</p>
+                            </div>
                         </div>
                         <div class="position-meta">
                             <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Hyderabad, TS</span>
                             <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
-                            <span class="meta-item"><i class="fas fa-calendar-alt"></i> Posted 3 days ago</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
                         </div>
                     </div>
                     <div class="position-details">
-                        <h4>Job Description:</h4>
-                        <ul>
-                            <li>Oversee daily construction site operations</li>
-                            <li>Supervise and coordinate subcontractors and workers</li>
-                            <li>Ensure work complies with plans and specifications</li>
-                            <li>Maintain safety standards on site</li>
-                            <li>Report on progress and issues to project manager</li>
-                        </ul>
-                        <h4>Requirements:</h4>
-                        <ul>
-                            <li>Diploma or degree in Construction Management</li>
-                            <li>4+ years experience in construction supervision</li>
-                            <li>Knowledge of construction methods and materials</li>
-                            <li>Strong problem-solving skills</li>
-                        </ul>
-                        <a href="#" class="apply-btn">Apply Now</a>
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Oversee technical aspects of construction projects</li>
+                                <li>Supervise work and ensure plans are followed</li>
+                                <li>Conduct quality control inspections</li>
+                                <li>Liaise with workers and subcontractors</li>
+                                <li>Maintain project documentation and reports</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Civil Engineering</li>
+                                <li>3+ years site engineering experience</li>
+                                <li>Knowledge of construction methods and materials</li>
+                                <li>Strong leadership and communication skills</li>
+                                <li>Ability to read and interpret technical drawings</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Construction</span>
+                            <span class="tag">Supervision</span>
+                            <span class="tag">Quality Control</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                
-                <div class="position-card">
+
+                <!-- Field Engineer -->
+                <div class="position-card" data-department="construction">
                     <div class="position-header">
                         <div class="position-title">
-                            <h3>Interior Designer</h3>
-                            <p>Design Studio</p>
+                            <div class="position-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Field Engineer</h3>
+                                <p>Construction Operations</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Multiple Locations</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Apply engineering principles on construction sites</li>
+                                <li>Monitor construction progress and quality</li>
+                                <li>Troubleshoot technical issues</li>
+                                <li>Prepare daily reports and documentation</li>
+                                <li>Coordinate between office and field teams</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Civil Engineering</li>
+                                <li>2+ years field engineering experience</li>
+                                <li>Practical knowledge of construction methods</li>
+                                <li>Strong problem-solving skills</li>
+                                <li>Ability to work in challenging environments</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Field Work</span>
+                            <span class="tag">Construction</span>
+                            <span class="tag">Quality Assurance</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Construction Engineer -->
+                <div class="position-card" data-department="construction">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Construction Engineer</h3>
+                                <p>Construction Management</p>
+                            </div>
                         </div>
                         <div class="position-meta">
                             <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Delhi, DL</span>
                             <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
-                            <span class="meta-item"><i class="fas fa-calendar-alt"></i> Posted 5 days ago</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
                         </div>
                     </div>
                     <div class="position-details">
-                        <h4>Job Description:</h4>
-                        <ul>
-                            <li>Create interior design concepts for residential and commercial projects</li>
-                            <li>Select materials, furnishings, and color schemes</li>
-                            <li>Prepare presentations and 3D renderings for clients</li>
-                            <li>Coordinate with architects and contractors</li>
-                            <li>Manage projects from concept to installation</li>
-                        </ul>
-                        <h4>Requirements:</h4>
-                        <ul>
-                            <li>Degree in Interior Design or related field</li>
-                            <li>2+ years professional experience</li>
-                            <li>Proficiency in design software (AutoCAD, 3ds Max, etc.)</li>
-                            <li>Strong creative and communication skills</li>
-                        </ul>
-                        <a href="#" class="apply-btn">Apply Now</a>
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Manage and oversee construction processes</li>
+                                <li>Ensure efficiency and safety on site</li>
+                                <li>Monitor adherence to design specifications</li>
+                                <li>Coordinate maintenance and repair activities</li>
+                                <li>Implement quality control procedures</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Civil Engineering</li>
+                                <li>4+ years construction experience</li>
+                                <li>Knowledge of construction management principles</li>
+                                <li>Strong organizational and leadership skills</li>
+                                <li>Familiarity with safety regulations</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Construction</span>
+                            <span class="tag">Management</span>
+                            <span class="tag">Quality Control</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Surveyor -->
+                <div class="position-card" data-department="construction">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-compass"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Land Surveyor</h3>
+                                <p>Survey Department</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Multiple Locations</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Measure and map land for construction projects</li>
+                                <li>Establish boundaries, elevations, and site features</li>
+                                <li>Prepare survey reports and drawings</li>
+                                <li>Operate surveying equipment (GPS, total stations)</li>
+                                <li>Provide data for planning and construction layout</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Diploma/Degree in Surveying or Civil Engineering</li>
+                                <li>2+ years surveying experience</li>
+                                <li>Proficiency with surveying instruments and software</li>
+                                <li>Knowledge of surveying principles and techniques</li>
+                                <li>Ability to work outdoors in various conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Surveying</span>
+                            <span class="tag">Mapping</span>
+                            <span class="tag">GPS</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Construction Superintendent -->
+                <div class="position-card" data-department="construction">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-user-hard-hat"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Construction Superintendent</h3>
+                                <p>Site Management</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Mumbai, MH</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Oversee day-to-day construction site operations</li>
+                                <li>Manage crews, schedules, and site logistics</li>
+                                <li>Implement and enforce safety protocols</li>
+                                <li>Coordinate with project managers and subcontractors</li>
+                                <li>Ensure quality standards are maintained</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>10+ years construction experience</li>
+                                <li>5+ years in supervisory/management roles</li>
+                                <li>Thorough knowledge of construction processes</li>
+                                <li>Strong leadership and communication skills</li>
+                                <li>OSHA certification preferred</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Leadership</span>
+                            <span class="tag">Site Management</span>
+                            <span class="tag">Safety</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project Engineer -->
+                <div class="position-card" data-department="management">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Project Engineer</h3>
+                                <p>Project Management</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Bengaluru, KA</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Bridge engineering and management functions</li>
+                                <li>Oversee technical and operational project aspects</li>
+                                <li>Manage scheduling and resource allocation</li>
+                                <li>Coordinate between design and construction teams</li>
+                                <li>Monitor project progress and report to stakeholders</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Civil Engineering</li>
+                                <li>5+ years project engineering experience</li>
+                                <li>Knowledge of project management principles</li>
+                                <li>Strong technical and organizational skills</li>
+                                <li>Excellent communication abilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Project Management</span>
+                            <span class="tag">Coordination</span>
+                            <span class="tag">Engineering</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project Manager -->
+                <div class="position-card featured-position" data-department="management">
+                    <div class="featured-badge">Featured</div>
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Project Manager</h3>
+                                <p>Construction Management</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Multiple Locations</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Plan, execute, and close construction projects</li>
+                                <li>Manage budget, timeline, and resources</li>
+                                <li>Coordinate stakeholders and project teams</li>
+                                <li>Ensure project goals and quality standards are met</li>
+                                <li>Mitigate risks and resolve project issues</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Civil Engineering or Construction Management</li>
+                                <li>8+ years project management experience</li>
+                                <li>PMP certification preferred</li>
+                                <li>Strong leadership and negotiation skills</li>
+                                <li>Proven track record of successful project delivery</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Leadership</span>
+                            <span class="tag">Budgeting</span>
+                            <span class="tag">Stakeholder Management</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Construction Manager -->
+                <div class="position-card" data-department="management">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Construction Manager</h3>
+                                <p>Operations Management</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Hyderabad, TS</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Oversee entire construction project lifecycle</li>
+                                <li>Manage budgeting, scheduling, and procurement</li>
+                                <li>Ensure safety and quality standards are maintained</li>
+                                <li>Lead and motivate project teams</li>
+                                <li>Handle multiple or complex construction projects</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Civil Engineering or Construction Management</li>
+                                <li>10+ years construction management experience</li>
+                                <li>Comprehensive knowledge of construction processes</li>
+                                <li>Strong leadership and decision-making skills</li>
+                                <li>Excellent organizational and communication abilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Construction</span>
+                            <span class="tag">Management</span>
+                            <span class="tag">Operations</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Senior Civil Engineer -->
+                <div class="position-card" data-department="engineering">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Senior Civil Engineer</h3>
+                                <p>Engineering Leadership</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Delhi, DL</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Lead design teams on complex projects</li>
+                                <li>Make critical technical decisions</li>
+                                <li>Mentor junior engineering staff</li>
+                                <li>Review and approve engineering designs</li>
+                                <li>Interface with clients and stakeholders</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Master's degree in Civil Engineering</li>
+                                <li>10+ years civil engineering experience</li>
+                                <li>Professional Engineer (PE) license preferred</li>
+                                <li>Strong technical and leadership skills</li>
+                                <li>Proven project leadership experience</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Leadership</span>
+                            <span class="tag">Technical Expertise</span>
+                            <span class="tag">Mentoring</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Engineering Manager -->
+                <div class="position-card" data-department="management">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-user-cog"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Engineering Manager</h3>
+                                <p>Engineering Leadership</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Mumbai, MH</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Oversee engineering department operations</li>
+                                <li>Set technical strategy and standards</li>
+                                <li>Manage multiple project teams</li>
+                                <li>Ensure engineering excellence and innovation</li>
+                                <li>Collaborate with senior leadership</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Master's degree in Civil/Structural Engineering</li>
+                                <li>15+ years progressive engineering experience</li>
+                                <li>5+ years in engineering management</li>
+                                <li>Strong strategic and leadership abilities</li>
+                                <li>Excellent communication and decision-making skills</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Leadership</span>
+                            <span class="tag">Strategy</span>
+                            <span class="tag">Technical Management</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contracts Manager -->
+                <div class="position-card" data-department="management">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-file-signature"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Contracts Manager</h3>
+                                <p>Legal & Administration</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Gurugram, HR</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Manage project contracts and agreements</li>
+                                <li>Ensure compliance with contractual obligations</li>
+                                <li>Handle contract negotiations and claims</li>
+                                <li>Advise on legal and contractual matters</li>
+                                <li>Maintain contract documentation and records</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Degree in Law, Business, or related field</li>
+                                <li>5+ years contracts management experience</li>
+                                <li>Knowledge of construction contract law</li>
+                                <li>Strong negotiation and analytical skills</li>
+                                <li>Attention to detail and risk management</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Contracts</span>
+                            <span class="tag">Legal</span>
+                            <span class="tag">Negotiation</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    
     <!-- Culture Section -->
     <section class="culture-section">
         <div class="container">
@@ -1095,7 +1965,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-               <p>&copy; 2025 MG Buildcon Pvt Ltd. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ff6b00;"></i> by Jeevan K S</p>
+                <p>&copy; 2025 MG Buildcon Pvt Ltd. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ff6b00;"></i> by Jeevan K S</p>
             </div>
         </div>
     </footer>
