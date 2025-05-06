@@ -760,74 +760,74 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="contact-container">
-                <div class="contact-form">
-                    <h2>Send Us a Message</h2>
-                    <form>
-                        <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" placeholder="Enter Your First Name" required>
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-container">
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm" action="https://formspree.io/f/mldbbeky" method="POST">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Enter Your First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Enter Your Last Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h2>Talk to Us</h2>
+                <p>Have questions about our projects or services? Reach out to us through any of the channels below and we'll get back to you as soon as possible.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
                         </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" placeholder="Enter Your Last Name" required>
+                        <div class="contact-text">
+                            <h3>Phone</h3>
+                            <p>9880166879</p>
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" placeholder="Enter Your Phone Number" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="Enter Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" placeholder="Message"></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
-                <div class="contact-info">
-                    <h2>Talk to Us</h2>
-                    <p>Have questions about our projects or services? Reach out to us through any of the channels below and we'll get back to you as soon as possible.</p>
+                    </div>
                     
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h3>Phone</h3>
-                                <p>9880166879</p>
-                            </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
                         </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h3>Email</h3>
-                                <p>mgbuildcon2025@gmail.com</p>
-                            </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p>mgbuildcon2025@gmail.com</p>
                         </div>
-                        
-                        <div class="address-item">
-                            <h3>Bengaluru</h3>
-                            <p><i class="fas fa-map-marker-alt"></i> 403, 8th B Main Rd, 4th Block, Jayanagar, Bengaluru, Karnataka 560011</p>
-                        </div>
-                        
-                        <div class="address-item">
-                            <h3>Mysuru</h3>
-                            <p><i class="fas fa-map-marker-alt"></i> #3562, Ground Floor, Devaraja Mohalla, Vijayanagar 2nd Stage Mysuru, Karnataka - 570017</p>
-                        </div>
+                    </div>
+                    
+                    <div class="address-item">
+                        <h3>Bengaluru</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 403, 8th B Main Rd, 4th Block, Jayanagar, Bengaluru, Karnataka 560011</p>
+                    </div>
+                    
+                    <div class="address-item">
+                        <h3>Mysuru</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> #3562, Ground Floor, Devaraja Mohalla, Vijayanagar 2nd Stage Mysuru, Karnataka - 570017</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Map Section -->
     <section class="map-section">
@@ -892,11 +892,11 @@
                     <h3>Contact Us</h3>
                     <p><i class="fas fa-map-marker-alt"></i> 123 Construction Avenue, Bangalore, KA 560001</p>
                     <p><i class="fas fa-phone"></i> +91 9880166879 </p>
-                    <p><i class="fas fa-envelope"></i> mgbuildcon2025@gmail.com</p>
+                    <p><i class="fas fa-envelope"></i>mgbuildcon2025@gmail.com </p>
                 </div>
             </div>
             <div class="footer-bottom">
-               <p>&copy; 2025 MG Buildcon Pvt Ltd. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ff6b00;"></i> by Jeevan K S</p>
+                <p>&copy; 2025 MG Buildcon Pvt Ltd. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ff6b00;"></i> by Jeevan K S</p>
             </div>
         </div>
     </footer>
@@ -927,8 +927,11 @@
                 document.querySelector('header').classList.add('scrolled');
             } else {
                 document.querySelector('header').classList.remove('scrolled');
+
             }
         });
+
+        
     </script>
 </body>
 </html>
