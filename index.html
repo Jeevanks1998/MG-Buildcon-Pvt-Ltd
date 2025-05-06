@@ -1726,6 +1726,37 @@
             }
         }
 
+        /* WhatsApp Fixed Button (Non-Floating) */
+.whatsapp-fixed {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    background-color: #25D366;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-fixed:hover {
+    background-color: #128C7E;
+}
+
+.whatsapp-icon {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.whatsapp-text {
+    white-space: nowrap;
+}
+
        /* Footer Styles */
         footer {
             background-color: #222;
@@ -2493,7 +2524,13 @@
         </div>
     </div>
 </section>
-
+        
+<!-- WhatsApp Fixed Button -->
+<a href="https://wa.me/919880166879" class="whatsapp-fixed" target="_blank">
+    <i class="fab fa-whatsapp whatsapp-icon"></i>
+    <span class="whatsapp-text">Chat with us</span>
+</a>
+        
  <!-- Footer Styles -->
     <footer>
         <div class="container">
